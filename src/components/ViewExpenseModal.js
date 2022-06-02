@@ -16,14 +16,9 @@ const ViewExpenseModal = ({ budgetId, handleClose }) => {
       ? { name: "Uncategorized", id: UNCATEGORIZED_BUDGET_ID }
       : budgets.find((b) => b.id === budgetId);
 
-  //   const budget =
-  //     UNCATEGORIZED_BUDGET_ID === budgetId
-  //       ? { name: "Uncategorized", id: UNCATEGORIZED_BUDGET_ID }
-  //       : budgets.filter((budget) => budget.id === budgetId);
-
   console.log(budget);
   return (
-    <Modal show={budgetId != null} onHide={handleClose}>
+    <Modal show={budgetId !== ""} onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>
           <Stack direction="horizontal" gap="2">

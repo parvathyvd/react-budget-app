@@ -17,7 +17,7 @@ function App() {
   const [showBudgetModal, setShowBudgetModal] = useState(false);
   const [showExpenseModal, setShowExpenseModal] = useState(false);
   const [addExpenseModalBudgetId, setAddExpenseModalBudgetId] = useState();
-  const [viewExpenseModalBudgetId, setViewExpenseModalBudgetId] = useState();
+  const [viewExpenseModalBudgetId, setViewExpenseModalBudgetId] = useState("");
 
   const onBudgetClickHandler = () => {
     setShowBudgetModal(true);
@@ -46,9 +46,9 @@ function App() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(atuo-fill, minmax(300px,1fr))",
+            gridTemplateColumns: "repeat(auto-fill, minmax(400px,1fr))",
             gap: "1rem",
-            alignItems: "flex-start",
+            alignItems: "start",
           }}
         >
           {budgets.map((budget) => {
@@ -87,7 +87,7 @@ function App() {
       />
       <ViewExpenseModal
         budgetId={viewExpenseModalBudgetId}
-        handleClose={() => setViewExpenseModalBudgetId()}
+        handleClose={() => setViewExpenseModalBudgetId("")}
       />
     </>
   );
